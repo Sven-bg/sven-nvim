@@ -36,7 +36,11 @@ return require('packer').startup(function(use)
         end,
     }
     use('nvim-lua/plenary.nvim') -- " don't forget to add this one if you don't have it yet!
-    use('ThePrimeagen/harpoon')
+    use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { {"nvim-lua/plenary.nvim"} }
+    }
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
     use {
