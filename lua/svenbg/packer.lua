@@ -21,12 +21,19 @@ return require('packer').startup(function(use)
         'rose-pine/neovim',
         as = 'rose-pine',
         config = function()
-            vim.cmd('colorscheme rose-pine')
+            vim.cmd('colorscheme rose-pine-moon')
         end
     })
+---    use {
+---        'nvim-treesitter/nvim-treesitter',
+---        run = ':TSUpdate'
+---    }
     use {
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
     }
     use('nvim-lua/plenary.nvim') -- " don't forget to add this one if you don't have it yet!
     use('ThePrimeagen/harpoon')
