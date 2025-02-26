@@ -9,4 +9,4 @@ lsp.ensure_installed({
 })
 lsp.setup()
 
----vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
